@@ -10,7 +10,7 @@ int main() {
     // Você pode utilizar o código do primeiro desafio
     char estado[15], nomeCidade[15];
     char estado2[15], nomeCidade2[15];
-    int codigocarta, populacao, npontosturisticos;
+    int codigocarta, populacao, npontosturisticos, op, opatributos;
     int codigocarta2, populacao2, npontosturisticos2;
     float pib, pib2, area, area2;
     
@@ -19,43 +19,116 @@ int main() {
     // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
     // utilizando a função scanf para capturar as entradas.
     // utilize o código do primeiro desafio
-    printf("Digite estado: \n");
-    scanf(" %s", &estado);
-    printf("Digite código: \n");
-    scanf("%d", &codigocarta);
-    printf("Digite o Nome da cidade: \n");
-    scanf(" %s", &nomeCidade);
-    printf("Digite a População: \n");
-    scanf("%d", &populacao);
-    printf("Digite a área: \n");
-    scanf("%f", &area);
-    printf("Digite o Numero de pontos turisticos: \n");
-    scanf("%d", &npontosturisticos);
-    printf("Digite o Pib: \n");
-    scanf("%f", &pib);
 
-    printf("\n----------------------------------------------\n\n");
+    /* code */
 
-    printf("Digite estado da segunda carta: \n");
-    scanf(" %s", &estado2);
-    printf("Digite código da segunda carta: \n");
-    scanf("%d", &codigocarta2);
-    printf("Digite o Nome da cidade da segunda carta: \n");
-    scanf(" %s", &nomeCidade2);
-    printf("Digite a População da segunda carta: \n");
-    scanf("%d", &populacao2);
-    printf("Digite a área da segunda carta: \n");
-    scanf("%f", &area2);
-    printf("Digite o Numero de pontos turisticos da segunda carta: \n");
-    scanf("%d", &npontosturisticos2);
-    printf("Digite o Pib da segunda carta: \n");
-    scanf("%f", &pib2);
-    
+
+    printf("---------- MENU ---------- \n"); // MENU
+    printf("1) Cadastro de cartas!\n");
+    printf("2) Comparar atributos\n");
+    printf("3) Sair do jogo! \n");
+    scanf("%d", &op);
+
+
+    switch(op){
+    case 1:
+        printf("Digite estado: \n");
+        scanf(" %s", &estado);
+        printf("Digite código: \n");
+        scanf("%d", &codigocarta);
+        printf("Digite o Nome da cidade: \n");
+        scanf(" %s", &nomeCidade);
+        printf("Digite a População: \n");
+        scanf("%d", &populacao);
+        printf("Digite a área: \n");
+        scanf("%f", &area);
+        printf("Digite o Numero de pontos turisticos: \n");
+        scanf("%d", &npontosturisticos);
+        printf("Digite o Pib: \n");
+        scanf("%f", &pib);
+
+        printf("\n----------------------------------------------\n\n");
+
+        printf("Digite estado da segunda carta: \n");
+        scanf(" %s", &estado2);
+        printf("Digite código da segunda carta: \n");
+        scanf("%d", &codigocarta2);
+        printf("Digite o Nome da cidade da segunda carta: \n");
+        scanf(" %s", &nomeCidade2);
+        printf("Digite a População da segunda carta: \n");
+        scanf("%d", &populacao2);
+        printf("Digite a área da segunda carta: \n");
+        scanf("%f", &area2);
+        printf("Digite o Numero de pontos turisticos da segunda carta: \n");
+        scanf("%d", &npontosturisticos2);
+        printf("Digite o Pib da segunda carta: \n");
+        scanf("%f", &pib2);
+    break;
+
+    case 2:
+        printf("Escolha dois atributos\n");
+        printf("1) População! \n");
+        printf("2) Numero de pontos turisticos! \n");
+        printf("3) Pib! \n");
+        printf("4) Area! \n");
+        scanf("%d", &opatributos);
+        switch (opatributos){
+            case 1:
+                printf("Digite a população da carta 1\n");
+                scanf("%d", &populacao);
+                printf("Digite a população da carta 2\n");
+                scanf("%d", &populacao2);
+                if(populacao > populacao2){
+                    printf("População da Carta 1 e maior\n");
+                 }else{
+                    printf("População da Carta 2 e maior\n");
+                    }   
+            break;
+            case 2:
+                printf("Digite o Numero de pontos turisticos da carta 1\n");
+                scanf("%d", &npontosturisticos);
+                printf("Digite o NUmero de pontos turisticos da carta 2\n");
+                scanf("%d", &npontosturisticos2);
+                if(npontosturisticos > npontosturisticos2){
+                         printf("Numero de pontos turisticos da Carta 1 e maior \n");
+                }else{
+                        printf("Numero de pontos turisticos da Carta 2 e maior \n");
+            }
+            break;
+            case 3:
+                printf("Digite o pib da carta 1 \n");
+                scanf("%d",&pib);
+                printf("Digite o pib da carta 2 \n");
+                scanf("%d", &pib2);
+                if(pib > pib2){
+                    printf("Numero do pib da Carta 1 e maior \n");
+                }else{
+                     printf("Numero do pib da Carta 2 e maior \n");
+            }
+            break;
+            case 4:
+                printf("Digite a area da carta 1");
+                scanf("%d", &area);
+                printf("Digite a area da carta 2");
+                scanf("%d", &area2);
+                if(npontosturisticos > npontosturisticos2){
+                    printf("Numero da area da Carta 1 e maior \n");
+                }else{
+                    printf("Numero da area da Carta 2 e maior \n");
+            }
+            break;
+            default:
+                 printf("Opcao invalida \n");
+            break;
+        }
+        
+    break;
+    }
 
     // Comparação de Cartas:
     // Desenvolva a lógica de comparação entre duas cartas.
     // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
-        if(populacao > populacao2){
+      /*  if(populacao > populacao2){
             if(area > area2){
                 if(pib > pib2){
                     printf("Cidade 1 tem maior população %d \n maior area: %f \n maior pib: %f! \n", populacao, area, pib);
@@ -65,7 +138,7 @@ int main() {
         }else{
             printf("Cidade 2 tem maior população %d, maior area: %f e maior pib: %f!\n", populacao2, area2, pib2);
             printf("Cidade %s Vencedora!!! \n", nomeCidade2);
-        }
+        }*/
     // Exemplo:
     // if (populacaoA > populacaoB) {
     //     printf("Cidade 1 tem maior população.\n");
@@ -98,4 +171,5 @@ int main() {
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
 
     return 0;
+
 }

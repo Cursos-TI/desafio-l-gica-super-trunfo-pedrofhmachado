@@ -13,7 +13,7 @@ int main() {
     int codigocarta, populacao, npontosturisticos, op, opatributos;
     int codigocarta2, populacao2, npontosturisticos2;
     float pib, pib2, area, area2;
-    
+    int resultado;
     
     // Cadastro das Cartas:
     // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
@@ -71,6 +71,7 @@ int main() {
         printf("2) Numero de pontos turisticos! \n");
         printf("3) Pib! \n");
         printf("4) Area! \n");
+        printf("5) escolha dois atributos para comparação \n");
         scanf("%d", &opatributos);
         switch (opatributos){
             case 1:
@@ -79,10 +80,12 @@ int main() {
                 printf("Digite a população da carta 2\n");
                 scanf("%d", &populacao2);
                 if(populacao > populacao2){
-                    printf("População da Carta 1 e maior\n");
-                 }else{
-                    printf("População da Carta 2 e maior\n");
-                    }   
+                    printf("População da Carta 1 e %d maior\n", populacao);
+                 }else if(populacao2 > populacao){
+                    printf("População da Carta 2 e %d maior\n", populacao2);
+                }else if(populacao2 == populacao) {
+                    printf("Emparte populacao carta 1 e: %d e a da carta 2 e: %d \n", populacao, populacao2);
+                }   
             break;
             case 2:
                 printf("Digite o Numero de pontos turisticos da carta 1\n");
@@ -91,8 +94,10 @@ int main() {
                 scanf("%d", &npontosturisticos2);
                 if(npontosturisticos > npontosturisticos2){
                          printf("Numero de pontos turisticos da Carta 1 e maior \n");
-                }else{
+                }else if(npontosturisticos2 > npontosturisticos){
                         printf("Numero de pontos turisticos da Carta 2 e maior \n");
+            }   else if(npontosturisticos2 == npontosturisticos){
+                        printf("Emparte numero de pontos turisticos da carta 1 e: %d e a da carta 2 e: %d \n", npontosturisticos, npontosturisticos2);
             }
             break;
             case 3:
@@ -102,21 +107,26 @@ int main() {
                 scanf("%d", &pib2);
                 if(pib > pib2){
                     printf("Numero do pib da Carta 1 e maior \n");
-                }else{
+                }else if(pib2 > pib){
                      printf("Numero do pib da Carta 2 e maior \n");
-            }
+                }else if(pib == pib2){
+                     printf("Emparte o pib da carta 1 e: %d e a da carta 2 e: %d \n", pib, pib2);
+                }
             break;
             case 4:
                 printf("Digite a area da carta 1");
                 scanf("%d", &area);
                 printf("Digite a area da carta 2");
                 scanf("%d", &area2);
-                if(npontosturisticos > npontosturisticos2){
+                if(area > area2){
                     printf("Numero da area da Carta 1 e maior \n");
-                }else{
+                }else if( area2 > area ){
                     printf("Numero da area da Carta 2 e maior \n");
-            }
+                }else if(area == area2){
+                    printf("Emparte area da carta 1 e: %d e a da carta 2 e: %d\n ", area, area2);
+                }
             break;
+
             default:
                  printf("Opcao invalida \n");
             break;
